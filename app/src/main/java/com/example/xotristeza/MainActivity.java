@@ -46,8 +46,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 n++;
-                if(n % 10 == 0 && cont < 10){
+                if(n % 10 == 0){
                   cont++;
+                }if (cont >= imagensIds.length){
+                    cont--;
                 }
 
                 iSmile.setImageResource(imagensIds[cont]);
