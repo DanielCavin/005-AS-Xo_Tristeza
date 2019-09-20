@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
         iSmile = findViewById(R.id.iSmile);
         btnSmile = findViewById(R.id.btnSmile);
         tContSmile = findViewById(R.id.tContSmile);
-        iSmile.setImageResource(imagensIds[cont]);
-
         // Responsavel por zerar a contagem
 
         // logia do contador
@@ -46,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 n++;
-                if(n % 10 == 0){
-                  cont++;
-                }if (cont >= imagensIds.length){
-                    cont--;
+                if(cont == 10){
+                    cont = 0;
                 }
-
+                if(n % 10 == 0){
+                    cont++;
+                }
                 iSmile.setImageResource(imagensIds[cont]);
                 tContSmile.setText(""+ n );
 
